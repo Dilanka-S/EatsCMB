@@ -18,13 +18,13 @@ public class FoodItemData {
         return foodItemArrayList;
     }
 
-    public static ArrayList<FoodItem> getFoodItems(){
+    public static void getFoodItems(){
         while(!alreadySet){
             initializeList();
             alreadySet=true;
         }
 
-        return foodItemArrayList;
+        //return foodItemArrayList;
     }
 
     private static void initializeList(){
@@ -64,12 +64,19 @@ public class FoodItemData {
         foodItemArrayList.add(new FoodItem(2012,"French Fries",10,
                 "Dunkin Donuts",320,"Salted French Fries fried to perfection",
                 R.drawable.mcdonald_frenchfries));
-
+        addCocaCola();
 
     }
-    public FoodItem getFoodItem(int id){
-        return foodItemArrayList.get(id);
+    public static FoodItem getFoodItem(int id){
+        FoodItem foodItem = null;
+        for (int i = 0; i < foodItemArrayList.size(); i++) {
+            if (id == foodItemArrayList.get(i).getFoodID()){
+                foodItem = foodItemArrayList.get(i);
+            }
+        }
+        return foodItem;
     }
+
     public int size(){
         return foodItemArrayList.size();
     }
@@ -77,8 +84,9 @@ public class FoodItemData {
         int index = size()+1;
         foodItemArrayList.add(index,foodItem);
     }
-    public ArrayList<FoodItem> getPicksOfTheDay(){
+    public static ArrayList<FoodItem> getPicksOfTheDay(){
         ArrayList<FoodItem> picksOfTheDayList = new ArrayList<>();
+        getFoodItems();
         for (int i = 0; i < 5; i++) {
             int rand = (int) (10 * Math.random());
             picksOfTheDayList.add(foodItemArrayList.get(rand));
@@ -102,4 +110,12 @@ public class FoodItemData {
         }
         return foodList;
     }
+    public static void addCocaCola(){
+        for (int i = 1; i <= 10; i++) {
+            foodItemArrayList.add(new FoodItem(2100+i,"Coca Cola",i,
+                    RestaurantData.getRestaurantName(i-1),250,"A refreshing can of original coca-cola",
+                    R.drawable.coca_cola_can));
+        }
+    }
+
 }

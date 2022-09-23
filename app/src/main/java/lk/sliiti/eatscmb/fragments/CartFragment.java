@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import lk.sliiti.eatscmb.R;
 import lk.sliiti.eatscmb.adapters.CartAdapter;
 import lk.sliiti.eatscmb.adapters.FoodSelectionAdapter;
+import lk.sliiti.eatscmb.database.data.CartItemData;
 import lk.sliiti.eatscmb.database.data.FoodItemData;
 
 /**
@@ -52,7 +53,7 @@ public class CartFragment extends Fragment {
 
         RecyclerView cartRecyclerView = view.findViewById(R.id.checkout_foodSelection);
         cartRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
-        cartRecyclerView.setAdapter(new CartAdapter(FoodItemData.getFoodItems()));
+        cartRecyclerView.setAdapter(new CartAdapter(CartItemData.getCartItemDataArrayList(),getParentFragmentManager()));
         return view;
     }
 }

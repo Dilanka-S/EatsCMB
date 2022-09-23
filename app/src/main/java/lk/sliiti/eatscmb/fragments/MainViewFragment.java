@@ -69,7 +69,7 @@ public class MainViewFragment extends Fragment {
 
         RecyclerView pfyRecyclerView = view.findViewById(R.id.picksRecycler);
         pfyRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
-        pfyRecyclerView.setAdapter(new PicksOfTheDayAdapter(FoodItemData.getFoodItems()));
+        pfyRecyclerView.setAdapter(new PicksOfTheDayAdapter(FoodItemData.getPicksOfTheDay(),getParentFragmentManager()));
 
 
         cartButton = view.findViewById(R.id.mainCart);

@@ -5,20 +5,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 import lk.sliiti.eatscmb.R;
-import lk.sliiti.eatscmb.database.model.FoodItem;
+import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.viewHolders.CartVH;
-import lk.sliiti.eatscmb.viewHolders.FoodSelectionVH;
 
 public class CartAdapter extends RecyclerView.Adapter<CartVH> {
-    private ArrayList<FoodItem> foodItemArrayList;
+    private ArrayList<CartItem> cartItems;
+    private FragmentManager fragmentManager;
 
-    public CartAdapter(ArrayList<FoodItem> foodItemArrayList) {
-        this.foodItemArrayList = foodItemArrayList;
+    public CartAdapter(ArrayList<CartItem> foodItemArrayList, FragmentManager fragmentManager) {
+        this.cartItems = foodItemArrayList;
+        this.fragmentManager = fragmentManager;
     }
 
     @NonNull
@@ -31,11 +33,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartVH> {
 
     @Override
     public void onBindViewHolder(@NonNull CartVH holder, int position) {
-        holder.bind(foodItemArrayList.get(position));
+        holder.bind(cartItems.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return foodItemArrayList.size();
+        return cartItems.size();
     }
 }

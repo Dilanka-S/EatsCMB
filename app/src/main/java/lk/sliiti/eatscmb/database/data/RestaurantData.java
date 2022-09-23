@@ -35,6 +35,9 @@ public class RestaurantData {
     public Restaurant getRestaurant(int id){
         return restaurantArrayList.get(id);
     }
+    public static String getRestaurantName(int i){
+        return restaurantArrayList.get(i).getRestaurantName();
+    }
 
     public int size(){
         return restaurantArrayList.size();

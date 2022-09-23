@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import lk.sliiti.eatscmb.R;
+import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.database.model.FoodItem;
 
 public class CartVH extends RecyclerView.ViewHolder {
@@ -17,10 +18,10 @@ public class CartVH extends RecyclerView.ViewHolder {
         quantity = itemView.findViewById(R.id.cartItemQuantity);
         price = itemView.findViewById(R.id.CartItemTotal);
     }
-    public void bind(FoodItem foodItem){
-        itemName.setText(foodItem.getFoodName());
-        quantity.setText("0");
-        String tempPrice = String.valueOf(foodItem.getPrice());
+    public void bind(CartItem cartItem){
+        itemName.setText(cartItem.getFoodName());
+        quantity.setText(String.valueOf(cartItem.getQuantity()));
+        String tempPrice = String.valueOf(cartItem.getFoodPrice());
         String price2="";
         price.setText(price2.concat("LKR "+tempPrice));
     }

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="51dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/polygon_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/logIn_placeholder"
+        android:layout_width="510dp"
+        android:layout_height="508dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575"
+        app:srcCompat="@drawable/login_placeholder" />
+
+    <TextView
+        android:id="@+id/logIntxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="LOG IN"
+        android:textColor="#F28E26"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/logIn_placeholder"
+        app:layout_constraintTop_toTopOf="@+id/logIn_placeholder" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="Password"
+        android:textColor="#F28E26"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/userNameTxt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/userNameTxt" />
+
+    <EditText
+        android:id="@+id/nextPass"
+        android:layout_width="310dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="Password"
+        android:textColor="#F28E26"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/userNameTxt"
+        android:layout_width="309dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#F28E26"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/logIntxt"
+        app:layout_constraintTop_toBottomOf="@+id/logIntxt" />
+
+    <Button
+        android:id="@+id/register_btn2"
+        android:layout_width="134dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Register"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/login_btn_2"
+        app:layout_constraintStart_toStartOf="@+id/login_btn_2"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn_2" />
+
+    <Button
+        android:id="@+id/login_btn_2"
+        android:layout_width="134dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Log in"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/nextPass"
+        app:layout_constraintStart_toStartOf="@+id/nextPass"
+        app:layout_constraintTop_toBottomOf="@+id/nextPass" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/itemPlaceholder"
+        android:layout_width="195dp"
+        android:layout_height="199dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/placeholder_picks_for_you" />
+
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_width="170dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/itemPlaceholder"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/itemPlaceholder"
+        app:layout_constraintTop_toTopOf="@+id/itemPlaceholder"
+        app:srcCompat="@drawable/mcdonald_frenchfries" />
+
+    <ImageView
+        android:id="@+id/addToCartIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        app:layout_constraintBottom_toBottomOf="@+id/forYouPrice"
+        app:layout_constraintStart_toStartOf="@+id/itemPlaceholder"
+        app:layout_constraintTop_toTopOf="@+id/forYouName"
+        app:layout_constraintVertical_bias="0.473"
+        app:srcCompat="@drawable/ic_add_to_cart_svgrepo_com" />
+
+    <TextView
+        android:id="@+id/forYouPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="1dp"
+        android:text="LKR 320"
+        android:textColor="#F28E26"
+        app:layout_constraintStart_toStartOf="@+id/itemPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/forYouName" />
+
+    <TextView
+        android:id="@+id/forYouName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="French Fries"
+        android:textColor="#F28E26"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/itemPlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/itemImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

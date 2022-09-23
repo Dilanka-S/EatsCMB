@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/restaurant_placeholder"
+        android:layout_width="386dp"
+        android:layout_height="209dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/restaurent_rectangle" />
+
+    <ImageView
+        android:id="@+id/restaurant_profilepic"
+        android:layout_width="373dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/restaurant_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/restaurant_placeholder"
+        app:layout_constraintTop_toTopOf="@+id/restaurant_placeholder"
+        app:srcCompat="@drawable/mcdonalds_big_mac_fries_1" />
+
+    <TextView
+        android:id="@+id/restaurantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="TextView"
+        android:textColor="#F28E26"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/restaurant_profilepic"
+        app:layout_constraintTop_toBottomOf="@+id/restaurant_profilepic" />
+
+    <TextView
+        android:id="@+id/restaurantTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="15-10 min"
+        android:textColor="#F28E26"
+        app:layout_constraintBottom_toBottomOf="@+id/restaurantName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/restaurantName" />
+</androidx.constraintlayout.widget.ConstraintLayout>

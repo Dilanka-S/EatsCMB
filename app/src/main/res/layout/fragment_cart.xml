@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/checkout_ResName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="McDonald's"
+        android:textColor="#F28E26"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/checkout_ScrollBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkout_ResName"
+        app:srcCompat="@drawable/line_1" />
+
+    <ImageView
+        android:id="@+id/checkout_PlaceHolder"
+        android:layout_width="370dp"
+        android:layout_height="486dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkout_ScrollBar"
+        app:srcCompat="@drawable/rectangle_13" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/checkout_foodSelection"
+        android:layout_width="277dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkout_PlaceHolder"
+        app:layout_constraintEnd_toEndOf="@+id/checkout_PlaceHolder"
+        app:layout_constraintStart_toStartOf="@+id/checkout_PlaceHolder"
+        app:layout_constraintTop_toBottomOf="@+id/checkout_ScrollBar"
+        app:layout_constraintVertical_bias="0.507" />
+
+    <Button
+        android:id="@+id/checkout_Button"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Checkout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkout_PlaceHolder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

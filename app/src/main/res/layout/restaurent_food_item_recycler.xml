@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/foodItem_placeHolder"
+        android:layout_width="367dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectangle_1" />
+
+    <TextView
+        android:id="@+id/food_title"
+        android:layout_width="119dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Big Mac"
+        android:textColor="#F28E26"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/foodItem_placeHolder"
+        app:layout_constraintTop_toTopOf="@+id/foodItem_placeHolder" />
+
+    <TextView
+        android:id="@+id/food_descriptiom"
+        android:layout_width="178dp"
+        android:layout_height="55dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        android:textColor="#9F9F9F"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/food_title"
+        app:layout_constraintTop_toBottomOf="@+id/food_title" />
+
+    <TextView
+        android:id="@+id/food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="LKR 1400"
+        android:textColor="#F28E26"
+        app:layout_constraintStart_toStartOf="@+id/food_descriptiom"
+        app:layout_constraintTop_toBottomOf="@+id/food_descriptiom" />
+
+    <ImageView
+        android:id="@+id/foodItem_Photo"
+        android:layout_width="136dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/foodItem_placeHolder"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toEndOf="@+id/food_descriptiom"
+        app:layout_constraintTop_toTopOf="@+id/foodItem_placeHolder"
+        app:srcCompat="@drawable/mcdonalds_big_mac_food" />
+
+    <ImageButton
+        android:id="@+id/food_add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/eats_orange"
+        app:layout_constraintStart_toStartOf="@+id/food_price"
+        app:layout_constraintTop_toBottomOf="@+id/food_price"
+        app:srcCompat="@drawable/group_1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/food_count_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/food_add_btn"
+        app:layout_constraintStart_toEndOf="@+id/food_add_btn"
+        app:layout_constraintTop_toTopOf="@+id/food_add_btn"
+        app:srcCompat="@drawable/rectangle_5" />
+
+    <ImageButton
+        android:id="@+id/food_remove_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/food_count_background"
+        app:layout_constraintStart_toEndOf="@+id/food_count_background"
+        app:layout_constraintTop_toTopOf="@+id/food_count_background"
+        app:layout_constraintVertical_bias="0.277"
+        app:srcCompat="@drawable/group_2"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/food_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="@+id/food_count_background"
+        app:layout_constraintEnd_toEndOf="@+id/food_count_background"
+        app:layout_constraintStart_toEndOf="@+id/food_add_btn"
+        app:layout_constraintTop_toTopOf="@+id/food_count_background" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

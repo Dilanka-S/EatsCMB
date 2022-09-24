@@ -15,6 +15,8 @@ public class LoginDBCursor extends CursorWrapper {
     public User getUser(){
         String username = getString(getColumnIndex(LoginDBSchema.userTable.Cols.USERNAME));
         String password = getString(getColumnIndex(LoginDBSchema.userTable.Cols.PASSWORD));
-        return new User(username,password);
+        String name = null;
+        Boolean logStatus = null;
+        return new User(username,password,name,logStatus);
     }
 }

@@ -19,6 +19,8 @@ public class EatsCMBDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table "+ LoginDBSchema.userTable.NAME+"" + "("
                 +LoginDBSchema.userTable.Cols.USERNAME+" Text PRIMARY KEY, "
+                +LoginDBSchema.userTable.Cols.NAME+" Text NOT NULL, "
+                +LoginDBSchema.userTable.Cols.LOG_STATUS+" Boolean NOT NULL, "
                 + LoginDBSchema.userTable.Cols.PASSWORD+ " Text NOT NULL);");
         db.execSQL("create table "+ RestaurantDBSchema.restaurantTable.NAME+"("
                 +RestaurantDBSchema.restaurantTable.Cols.RESTAURANTID+"Integer PRIMARY KEY,"

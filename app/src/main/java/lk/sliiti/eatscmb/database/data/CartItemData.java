@@ -18,12 +18,16 @@ public class CartItemData {
     public static void addToCart(FoodItem foodItem){
         if(cartItemDataArrayList.contains(getCartItem(foodItem.getFoodID()))){
             int quantity = getCartItem(foodItem.getFoodID()).getQuantity() +1;
+            int price = getCartItem(foodItem.getFoodID()).getFoodPrice();
+            int total = getCartItem(foodItem.getFoodID()).getTotal() + price;
             getCartItem(foodItem.getFoodID()).setQuantity(quantity);
+            getCartItem(foodItem.getFoodID()).setTotal(total);
         }else{
             cartItemDataArrayList.add(new CartItem(foodItem.getFoodID(),
                     foodItem.getFoodName(),
                     foodItem.getPrice(),
-                    1));
+                    1,
+                    foodItem.getPrice()));
         }
 
     }

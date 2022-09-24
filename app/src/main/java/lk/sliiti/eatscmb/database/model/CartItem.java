@@ -5,6 +5,7 @@ public class CartItem {
     String foodName;
     int foodPrice;
     int quantity;
+    int total;
 
     public int getFoodID() {
         return foodID;
@@ -38,10 +39,19 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public CartItem(int foodID, String foodName, int foodPrice, int quantity) {
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public CartItem(int foodID, String foodName, int foodPrice, int quantity, int total) {
         this.foodID = foodID;
         this.foodName = foodName;
         this.foodPrice = foodPrice;
         this.quantity = quantity;
+        this.total = total;
     }
 }

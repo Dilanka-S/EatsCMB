@@ -6,6 +6,8 @@ public class LoginDBSchema {
         public static class Cols{
             public static final String USERNAME = "username";
             public static final String PASSWORD = "password";
+            public static final String NAME = "name";
+            public static final String LOG_STATUS = "status";
         }
 
     }

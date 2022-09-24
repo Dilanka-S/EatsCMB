@@ -6,19 +6,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/glass_e1">
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/register_backBtn"-->
-<!--        android:layout_width="47dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:background="#00FFFFFF"-->
-<!--        android:backgroundTint="#FFFFFF"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/polygon_left"-->
-<!--        tools:ignore="SpeakableTextPresentCheck" />-->
 
     <ImageView
-        android:id="@+id/register_placeholer"
+        android:id="@+id/login_placeholer"
         android:layout_width="374dp"
         android:layout_height="788dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,68 +17,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.473"
-        app:srcCompat="@drawable/rectangle_14" />
+        app:srcCompat="@drawable/rectangle__1" />
 
     <TextView
         android:id="@+id/loginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="256dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="REGISTER"
+        android:text="LOGIN"
         android:textColor="#F28E26"
         android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="@+id/register_placeholer"
-        app:layout_constraintStart_toStartOf="@+id/register_placeholer"
-        app:layout_constraintTop_toTopOf="@+id/register_placeholer" />
-
-    <ImageView
-        android:id="@+id/name_placeholder"
-        android:layout_width="344dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/register_placeholer"
-        app:layout_constraintStart_toStartOf="@+id/register_placeholer"
-        app:layout_constraintTop_toBottomOf="@+id/loginTitle"
-        app:srcCompat="@drawable/rectangle_15" />
+        app:layout_constraintEnd_toEndOf="@+id/login_placeholer"
+        app:layout_constraintStart_toStartOf="@+id/login_placeholer"
+        app:layout_constraintTop_toTopOf="@+id/login_placeholer" />
 
     <ImageView
         android:id="@+id/username_placeholder"
         android:layout_width="344dp"
         android:layout_height="68dp"
-        app:layout_constraintEnd_toEndOf="@+id/register_placeholer"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/login_placeholer"
         app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="@+id/register_placeholer"
-        app:layout_constraintTop_toBottomOf="@+id/name_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/login_placeholer"
+        app:layout_constraintTop_toBottomOf="@+id/loginTitle"
         app:srcCompat="@drawable/rectangle_15" />
 
     <ImageView
         android:id="@+id/password_placeholder"
         android:layout_width="344dp"
         android:layout_height="68dp"
-        app:layout_constraintEnd_toEndOf="@+id/register_placeholer"
+        app:layout_constraintEnd_toEndOf="@+id/login_placeholer"
         app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="@+id/register_placeholer"
+        app:layout_constraintStart_toStartOf="@+id/login_placeholer"
         app:layout_constraintTop_toBottomOf="@+id/username_placeholder"
         app:srcCompat="@drawable/rectangle_15" />
 
     <EditText
-        android:id="@+id/register_name"
-        android:layout_width="304dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#F28E08"
-        android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="#F28E26"
-        app:layout_constraintBottom_toBottomOf="@+id/name_placeholder"
-        app:layout_constraintEnd_toEndOf="@+id/name_placeholder"
-        app:layout_constraintStart_toStartOf="@+id/name_placeholder"
-        app:layout_constraintTop_toTopOf="@+id/name_placeholder" />
-
-    <EditText
-        android:id="@+id/register_username"
+        android:id="@+id/login_username"
         android:layout_width="304dp"
         android:layout_height="48dp"
         android:backgroundTint="#F28E08"
@@ -103,7 +69,7 @@
         app:layout_constraintTop_toTopOf="@+id/username_placeholder" />
 
     <EditText
-        android:id="@+id/register_password"
+        android:id="@+id/login_password"
         android:layout_width="301dp"
         android:layout_height="48dp"
         android:backgroundTint="#F28E26"
@@ -118,27 +84,15 @@
         app:layout_constraintTop_toBottomOf="@+id/username_placeholder" />
 
     <ImageButton
-        android:id="@+id/register_btn"
+        android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/register_placeholer"
-        app:layout_constraintStart_toStartOf="@+id/register_placeholer"
+        app:layout_constraintEnd_toEndOf="@+id/login_placeholer"
+        app:layout_constraintStart_toStartOf="@+id/login_placeholer"
         app:layout_constraintTop_toBottomOf="@+id/password_placeholder"
-        app:srcCompat="@drawable/loginbtn2"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/register_goToLoginBtn"
-        android:layout_width="358dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="8dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/register_placeholer"
-        app:layout_constraintStart_toStartOf="@+id/register_placeholer"
-        app:layout_constraintTop_toBottomOf="@+id/register_btn"
-        app:srcCompat="@drawable/loginbtn3"
+        app:srcCompat="@drawable/loginbtn4"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

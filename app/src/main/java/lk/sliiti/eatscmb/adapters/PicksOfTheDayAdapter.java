@@ -1,8 +1,11 @@
 package lk.sliiti.eatscmb.adapters;
 
+import static java.security.AccessController.getContext;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
@@ -16,6 +19,7 @@ import lk.sliiti.eatscmb.database.data.FoodItemData;
 import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.database.model.FoodItem;
 import lk.sliiti.eatscmb.fragments.FoodSelectionFragment;
+import lk.sliiti.eatscmb.fragments.MainViewFragment;
 import lk.sliiti.eatscmb.viewHolders.PicksOfTheDayVH;
 import lk.sliiti.eatscmb.viewHolders.RestaurantVH;
 
@@ -42,6 +46,8 @@ public class PicksOfTheDayAdapter extends RecyclerView.Adapter<PicksOfTheDayVH> 
         holder.itemView.setOnClickListener(v -> {
             int id = picksOfTheDayArrayList.get(holder.getAdapterPosition()).getFoodID();
             CartItemData.addToCart(FoodItemData.getFoodItem(id));
+            String popUp = "";
+            Toast.makeText(v.getContext(),popUp.concat(FoodItemData.getFoodItem(id).getFoodName()+" added to Cart!") ,Toast.LENGTH_SHORT).show();
 
 //                FoodSelectionFragment foodSelectionFragment = new FoodSelectionFragment(FoodItemData.fillFoodList(id),id);
 //                fragmentManager.beginTransaction()

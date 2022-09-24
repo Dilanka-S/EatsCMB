@@ -12,21 +12,20 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
+import lk.sliiti.eatscmb.database.data.RestaurantData;
+import lk.sliiti.eatscmb.database.dbModels.EatsCMBDBModel;
+import lk.sliiti.eatscmb.database.model.Restaurant;
 import lk.sliiti.eatscmb.fragments.MainViewFragment;
 import lk.sliiti.eatscmb.uvindu.adapter.PicksAdapter;
 import lk.sliiti.eatscmb.uvindu.adapter.RestaurantAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView picksForYouRecycler, restaurantRecycler;
-    PicksAdapter picksForYouAdapter;
-    RestaurantAdapter restaurantAdapter;
-    Fragment fragment;
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
-    Button shoppingCart;
+
+
 
 
 
@@ -39,18 +38,15 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_main);
 
-//        Button loginBtn = findViewById(R.id.loginBtn);
-//        shoppingCart = findViewById(R.id.mainCart);
-//
-//        loginBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this,LogInActivity.class));
-//            }
-//        });
+        EatsCMBDBModel eatsCMBDBModel = new EatsCMBDBModel();
+        eatsCMBDBModel.load(getApplicationContext());
 
-        //configureLogIn();
-        ;
+        ArrayList<Restaurant> restaurantArrayList = RestaurantData.getRestaurants();
+
+        for (int i = 0; i < restaurantArrayList.size(); i++) {
+            eatsCMBDBModel.addRestaurants(restaurantArrayList.get(i));
+        }
+
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -60,18 +56,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*private void configureLogIn()
-    {
-        loginBtn = (Button) findViewById(R.id.loginBtn);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LogInActivity(new Intent(MainActivity.this,LogInActivity.class));
-            }
-        });
-
-
-    }*/
 
 
 

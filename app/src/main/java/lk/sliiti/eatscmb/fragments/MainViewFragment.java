@@ -1,5 +1,6 @@
 package lk.sliiti.eatscmb.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,11 +16,16 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 import lk.sliiti.eatscmb.R;
 import lk.sliiti.eatscmb.adapters.PicksOfTheDayAdapter;
 import lk.sliiti.eatscmb.adapters.RestaurantsAdapter;
+import lk.sliiti.eatscmb.database.EatsCMBDBHelper;
 import lk.sliiti.eatscmb.database.data.FoodItemData;
 import lk.sliiti.eatscmb.database.data.RestaurantData;
+import lk.sliiti.eatscmb.database.dbModels.EatsCMBDBModel;
+import lk.sliiti.eatscmb.database.model.Restaurant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,12 +58,17 @@ public class MainViewFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        //EatsCMBDBHelper database = new EatsCMBDBHelper(getApplicationContext());
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        EatsCMBDBModel eatsCMBDBModel = new EatsCMBDBModel();
+        eatsCMBDBModel.load(getContext());
 
+        ArrayList<Restaurant> restaurantArrayList = eatsCMBDBModel.getAllRestaurants();
 //        logINButton.findViewById(R.id.loginBtn);
 
         // Inflate the layout for this fragment
@@ -77,7 +88,16 @@ public class MainViewFragment extends Fragment {
         cartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view,new CartFragment()).addToBackStack("mainViewFrag").commit();
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view,new CartFragment()).addToBackStack("mainViewFrag to Cart").commit();
+            }
+        });
+
+        logINButton = view.findViewById(R.id.loginBtn);
+
+        logINButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view,new LoginFragment()).addToBackStack("mainView to Login").commit();
             }
         });
 

@@ -7,8 +7,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import lk.sliiti.eatscmb.R;
+import lk.sliiti.eatscmb.database.data.UserData;
+import lk.sliiti.eatscmb.database.model.User;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +22,9 @@ import lk.sliiti.eatscmb.R;
  * create an instance of this fragment.
  */
 public class LoginFragment extends Fragment {
+    private EditText username, password;
+    private ImageButton loginButton, loginToRegButton;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,12 +64,52 @@ public class LoginFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        UserData.initialise();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View view =  inflater.inflate(R.layout.fragment_login, container, false);
+
+        loginToRegButton = view.findViewById(R.id.login_to_reg_btn);
+        loginToRegButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view,
+                        new RegisterFragment()).addToBackStack("Login to Register").commit();
+            }
+        });
+        loginButton = view.findViewById(R.id.login_menu_login_btn);
+        username = view.findViewById(R.id.login_username);
+        password = view.findViewById(R.id.login_password);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String usernameString = username.getText().toString();
+                String passwordString = password.getText().toString();
+
+                //Toast.makeText(getContext(),usernameString,Toast.LENGTH_SHORT).show();
+
+                if(UserData.getUser(usernameString)!=null){
+                    User user = UserData.getUser(usernameString);
+                    //Toast.makeText(getContext(),user.getName(),Toast.LENGTH_SHORT).show();
+                    if(passwordString.equals(user.getPassword())){
+                        user.setLogStatus("true");
+                        Toast.makeText(getContext(),"Successfull Login!",Toast.LENGTH_SHORT).show();
+                        getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view,new MainViewFragment()).addToBackStack("Login to MainView").commit();
+                    }else{
+                        Toast.makeText(getContext(),"Invalid Password!",Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(getContext(),"Invalid Username!",Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+
+        return view;
     }
 }

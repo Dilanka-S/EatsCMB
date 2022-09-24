@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import lk.sliiti.eatscmb.R;
@@ -19,7 +20,7 @@ import lk.sliiti.eatscmb.R;
  */
 public class RegisterFragment extends Fragment {
     private TextView name, password, username;
-    private Button registerBtn, backToLoginBtn, backBtn;
+    private ImageButton registerBtn, backToLoginBtn, backBtn;
 
 
 
@@ -73,6 +74,14 @@ public class RegisterFragment extends Fragment {
         password = view.findViewById(R.id.register_password);
         registerBtn = view.findViewById(R.id.register_btn);
         backToLoginBtn = view.findViewById(R.id.register_goToLoginBtn);
+
+        backToLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view,
+                        new LoginFragment()).addToBackStack("Login to Register").commit();
+            }
+        });
 
 
         return view;

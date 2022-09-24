@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/username_placeholder" />
 
     <ImageButton
-        android:id="@+id/login_btn"
+        android:id="@+id/login_menu_login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -93,6 +93,23 @@
         app:layout_constraintStart_toStartOf="@+id/login_placeholer"
         app:layout_constraintTop_toBottomOf="@+id/password_placeholder"
         app:srcCompat="@drawable/loginbtn4"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/login_to_reg_btn"
+        android:layout_width="189dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_menu_login_btn"
+        app:layout_constraintVertical_bias="0.47"
+        app:srcCompat="@drawable/loginbtn2"
+        android:background="@android:color/transparent"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,21 +31,21 @@ public class FoodItemData {
         foodItemArrayList.add(new FoodItem(2001,"French Fries",1,
                 "Mc Donald's",320,"Salted French Fries fried to perfection",
                 R.drawable.mcdonald_frenchfries));
-        foodItemArrayList.add(new FoodItem(2002,"Spicy Sandwich",3,
-                "Popeyes",1200,"Crispy Fried Chicken with spicy seasoning on a glorious sandwich",
-                R.drawable.popeyes_spicy_sandwich));
-        foodItemArrayList.add(new FoodItem(2003,"Big Mac",1,
-                "Mc Donald's",1350,"The perfect burger with two meat patties and a crunchy vege dressing",
-                R.drawable.mcdonalds_big_mac_fries));
         foodItemArrayList.add(new FoodItem(2004,"Chicken Bucket",2,
                 "KFC",3450,"12 Pieces of Colonel's special recipe Fried Chicken",
                 R.drawable.kfc_chicken_bucket));
-        foodItemArrayList.add(new FoodItem(2005,"Chicken Strips",3,
-                "Popeyes",1400,"Crispy Fried Chicken with spicy seasoning on a glorious sandwich",
-                R.drawable.popeyes_chicken_strips));
+        foodItemArrayList.add(new FoodItem(2002,"Spicy Sandwich",3,
+                "Popeyes",1200,"Crispy Fried Chicken with spicy seasoning on a glorious sandwich",
+                R.drawable.popeyes_spicy_sandwich));
         foodItemArrayList.add(new FoodItem(2006,"French Fries",4,
                 "Burgher King",320,"Salted French Fries fried to perfection",
                 R.drawable.mcdonald_frenchfries));
+        foodItemArrayList.add(new FoodItem(2003,"Big Mac",1,
+                "Mc Donald's",1350,"The perfect burger with two meat patties and a crunchy vege dressing",
+                R.drawable.mcdonalds_big_mac_fries));
+        foodItemArrayList.add(new FoodItem(2005,"Chicken Strips",3,
+                "Popeyes",1400,"Crispy Fried Chicken with spicy seasoning on a glorious sandwich",
+                R.drawable.popeyes_chicken_strips));
         foodItemArrayList.add(new FoodItem(2007,"French Fries",5,
                 "Pizza Hut",320,"Salted French Fries fried to perfection",
                 R.drawable.mcdonald_frenchfries));

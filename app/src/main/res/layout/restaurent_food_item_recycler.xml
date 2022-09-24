@@ -65,10 +65,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:background="@color/eats_orange"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="@+id/food_price"
         app:layout_constraintTop_toBottomOf="@+id/food_price"
         app:srcCompat="@drawable/group_1"
+        android:backgroundTint="@android:color/transparent"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView

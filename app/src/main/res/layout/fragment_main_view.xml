@@ -35,12 +35,13 @@
                 android:id="@+id/mainCart"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="68dp"
                 android:background="@drawable/ic_shoppingcart"
                 android:backgroundTint="#F28E26"
                 app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/loginBtn"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/ic_shoppingcart"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -126,6 +127,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginBtn"
                 app:srcCompat="@drawable/iconfinal2" />
+
+            <ImageButton
+                android:id="@+id/userProfile_icon"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/mainCart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainCart"
+                app:layout_constraintTop_toTopOf="@+id/mainCart"
+                app:srcCompat="@drawable/ic_baseline_person_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

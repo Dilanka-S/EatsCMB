@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
             eatsCMBDBModel.addRestaurants(restaurantArrayList.get(i));
         }
 
-//        ArrayList<FoodItem> foodItemArrayList = FoodItemData.getFoodItems();
-//
-//        for (int i = 0; i < foodItemArrayList.size(); i++) {
-//            eatsCMBDBModel.addFoodItems(foodItemArrayList.get(i));
-//        }
+        ArrayList<FoodItem> foodItemArrayList = FoodItemData.getFoodItems();
+
+        for (int i = 0; i < foodItemArrayList.size(); i++) {
+            eatsCMBDBModel.addFoodItems(foodItemArrayList.get(i));
+        }
 
         ArrayList<User> userArrayList = UserData.getUserDataArrayList();
 

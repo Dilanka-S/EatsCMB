@@ -6,6 +6,7 @@ import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.database.model.FoodItem;
 
 public class CartItemData {
+    private static final Integer ORDER_ID = 1000001;
     private static ArrayList<CartItem> cartItemDataArrayList = new ArrayList<>();
 
     public static ArrayList<CartItem> getCartItemDataArrayList() {
@@ -51,4 +52,25 @@ public class CartItemData {
         }
         return total;
     }
+    public static ArrayList<CartItem> getDemoCartList(){
+        ArrayList<CartItem> demoList = new ArrayList<>();
+
+        demoList.add(new CartItem(1200,"Mc Burger",1200, 2,2400));
+        demoList.add(new CartItem(1300,"Chicken Shawarma",1000, 3,3000));
+        demoList.add(new CartItem(1400,"Mc Burger",1200, 2,2400));
+        demoList.add(new CartItem(1500,"Chicken 6pc",1500, 1,1500));
+
+        return demoList;
+    }
+
+    public static int getOrderID(){
+        int something = 0;
+        return something;
+    }
+
+    public static void clearCart(){
+        cartItemDataArrayList.clear();
+    }
+
+
 }

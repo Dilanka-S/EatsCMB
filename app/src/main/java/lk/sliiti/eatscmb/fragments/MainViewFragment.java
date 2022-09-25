@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -24,6 +26,7 @@ import lk.sliiti.eatscmb.adapters.RestaurantsAdapter;
 import lk.sliiti.eatscmb.database.EatsCMBDBHelper;
 import lk.sliiti.eatscmb.database.data.FoodItemData;
 import lk.sliiti.eatscmb.database.data.RestaurantData;
+import lk.sliiti.eatscmb.database.data.UserData;
 import lk.sliiti.eatscmb.database.dbModels.EatsCMBDBModel;
 import lk.sliiti.eatscmb.database.model.FoodItem;
 import lk.sliiti.eatscmb.database.model.Restaurant;
@@ -37,6 +40,7 @@ public class MainViewFragment extends Fragment {
 
     private Button logINButton, cartButton;
     private TextView restaurantName;
+    private ImageButton profileButton;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -74,6 +78,8 @@ public class MainViewFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main_view, container, false);
+
+
         RecyclerView recyclerView = view.findViewById(R.id.restaurant_recycler);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2,RecyclerView.HORIZONTAL,false));
         recyclerView.setAdapter(new RestaurantsAdapter(restaurantArrayList,getParentFragmentManager()));
@@ -105,6 +111,19 @@ public class MainViewFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view,new LoginFragment()).addToBackStack("mainView to Login").commit();
+            }
+        });
+
+        profileButton = view.findViewById(R.id.userProfile_icon);
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (UserData.findLoggedInUser()!=null){
+                    getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new UserProfileFragment()).addToBackStack("mainView to User Profle").commit();
+                }else{
+                    Toast.makeText(getContext(),"Cannot find a logged in user!",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

@@ -51,6 +51,16 @@ public class UserData {
         }
         return confirmation;
     }
+    
+    public static User findLoggedInUser(){
+        User loggedUser = null;
+        for (int i = 0; i < userDataArrayList.size(); i++) {
+            if (userDataArrayList.get(i).getLogStatus().contains("true")){
+                loggedUser = userDataArrayList.get(i);
+            }
+        }
+        return loggedUser;
+    }
 
 
 

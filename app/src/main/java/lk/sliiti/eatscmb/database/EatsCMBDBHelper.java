@@ -23,19 +23,19 @@ public class EatsCMBDBHelper extends SQLiteOpenHelper {
                 +LoginDBSchema.userTable.Cols.LOG_STATUS+" Boolean NOT NULL, "
                 + LoginDBSchema.userTable.Cols.PASSWORD+ " Text NOT NULL);");
         db.execSQL("create table "+ RestaurantDBSchema.restaurantTable.NAME+"("
-                +RestaurantDBSchema.restaurantTable.Cols.RESTAURANTID+"Integer PRIMARY KEY,"
                 +RestaurantDBSchema.restaurantTable.Cols.NAME+" Text NOT NULL, "
-                +RestaurantDBSchema.restaurantTable.Cols.LOCATION+" Text NOT NULL, "
+                +RestaurantDBSchema.restaurantTable.Cols.PHOTO+ " Integer NOT NULL, "
                 +RestaurantDBSchema.restaurantTable.Cols.DISTANCE+ " Text, "
-                +RestaurantDBSchema.restaurantTable.Cols.PHOTO+ "Integer NOT NULL);");
+                +RestaurantDBSchema.restaurantTable.Cols.RESTAURANTID+" Integer PRIMARY KEY,"
+                +RestaurantDBSchema.restaurantTable.Cols.LOCATION+ " Text);");
         db.execSQL("create table "+ FoodItemDBSchema.foodItemTable.NAME+"("
-                +FoodItemDBSchema.foodItemTable.Cols.FOOD_ID+"Integer PRIMARY KEY,"
+                +FoodItemDBSchema.foodItemTable.Cols.FOOD_ID+" Integer PRIMARY KEY,"
                 +FoodItemDBSchema.foodItemTable.Cols.FOOD_NAME+" Text NOT NULL, "
                 +FoodItemDBSchema.foodItemTable.Cols.DESCRIPTION+" Text NOT NULL, "
                 +FoodItemDBSchema.foodItemTable.Cols.PRICE+" Integer NOT NULL, "
                 +FoodItemDBSchema.foodItemTable.Cols.RESTAURANT_ID+" Integer NOT NULL, "
                 +FoodItemDBSchema.foodItemTable.Cols.RESTAURANT+" Text NOT NULL, "
-                +FoodItemDBSchema.foodItemTable.Cols.FOOD_PHOTO+ "Integer NOT NULL);");
+                +FoodItemDBSchema.foodItemTable.Cols.FOOD_PHOTO+ " Integer NOT NULL);");
     }
 
     @Override

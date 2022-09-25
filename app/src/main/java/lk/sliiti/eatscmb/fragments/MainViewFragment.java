@@ -25,6 +25,7 @@ import lk.sliiti.eatscmb.database.EatsCMBDBHelper;
 import lk.sliiti.eatscmb.database.data.FoodItemData;
 import lk.sliiti.eatscmb.database.data.RestaurantData;
 import lk.sliiti.eatscmb.database.dbModels.EatsCMBDBModel;
+import lk.sliiti.eatscmb.database.model.FoodItem;
 import lk.sliiti.eatscmb.database.model.Restaurant;
 
 /**
@@ -75,8 +76,10 @@ public class MainViewFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main_view, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.restaurant_recycler);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2,RecyclerView.HORIZONTAL,false));
-        recyclerView.setAdapter(new RestaurantsAdapter(RestaurantData.getRestaurants(),getParentFragmentManager()));
+        recyclerView.setAdapter(new RestaurantsAdapter(restaurantArrayList,getParentFragmentManager()));
+        //RestaurantData.getRestaurants()
 
+        ArrayList<FoodItem> foodItemArrayList = eatsCMBDBModel.getAllFoodItems();
 
         RecyclerView pfyRecyclerView = view.findViewById(R.id.picksRecycler);
         pfyRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));

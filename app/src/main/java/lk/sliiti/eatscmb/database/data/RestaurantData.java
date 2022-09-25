@@ -9,6 +9,12 @@ public class RestaurantData {
     private static ArrayList<Restaurant> restaurantArrayList = new ArrayList<>();
     private static Boolean alreadySet = false;
 
+    public static void setRestaurantArrayList(ArrayList<Restaurant> restaurantArrayList) {
+        RestaurantData.restaurantArrayList = restaurantArrayList;
+    }
+
+
+
 
     public static ArrayList<Restaurant> getRestaurants(){
         while (!alreadySet){

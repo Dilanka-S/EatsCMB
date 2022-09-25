@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.w3c.dom.Text;
 
 import lk.sliiti.eatscmb.R;
+import lk.sliiti.eatscmb.database.data.CartItemData;
+import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.database.model.FoodItem;
 
 public class FoodSelectionVH extends RecyclerView.ViewHolder {
@@ -34,6 +36,11 @@ public class FoodSelectionVH extends RecyclerView.ViewHolder {
         String tempPrice = String.valueOf(foodItem.getPrice());
         String price="";
         foodPrice.setText(price.concat("LKR "+tempPrice));
-        foodCount.setText("0");
+        if(CartItemData.getCartItem(foodItem.getFoodID())!=null){
+            foodCount.setText(String.valueOf(CartItemData.getCartItem(foodItem.getFoodID()).getQuantity()));
+        }else{
+            foodCount.setText(String.valueOf(0));
+        }
+
     }
 }

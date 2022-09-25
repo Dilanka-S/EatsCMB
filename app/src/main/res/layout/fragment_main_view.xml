@@ -130,8 +130,8 @@
 
             <ImageButton
                 android:id="@+id/userProfile_icon"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="@+id/mainCart"
                 app:layout_constraintEnd_toEndOf="parent"

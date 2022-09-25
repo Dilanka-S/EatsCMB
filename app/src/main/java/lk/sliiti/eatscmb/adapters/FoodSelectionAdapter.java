@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,7 +22,8 @@ import lk.sliiti.eatscmb.viewHolders.PicksOfTheDayVH;
 
 public class FoodSelectionAdapter extends RecyclerView.Adapter<FoodSelectionVH> {
     private ArrayList<FoodItem> foodItemArrayList;
-    ImageButton plusButton;
+    private ImageButton plusButton,removeButton;
+    private TextView count;
 
     public FoodSelectionAdapter(ArrayList<FoodItem> foodItemArrayList) {
         this.foodItemArrayList = foodItemArrayList;
@@ -39,14 +41,36 @@ public class FoodSelectionAdapter extends RecyclerView.Adapter<FoodSelectionVH> 
     public void onBindViewHolder(@NonNull FoodSelectionVH holder, int position) {
         holder.bind(foodItemArrayList.get(position));
         plusButton = holder.itemView.findViewById(R.id.food_add_btn);
+        removeButton = holder.itemView.findViewById(R.id.food_remove_btn);
+        count = holder.itemView.findViewById(R.id.food_count);
+        //count.setText(String.valueOf(0));
 
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int id = foodItemArrayList.get(holder.getAdapterPosition()).getFoodID();
+                CartItemData.addToCart(FoodItemData.getFoodItem(id));
+
+                int countval = Integer.parseInt(count.getText().toString());
+                countval = countval+1;
+                count.setText(String.valueOf(countval));
+
                 String popUp="";
-                Toast.makeText(v.getContext(),popUp.concat(" added to Cart!") ,Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(),popUp.concat(FoodItemData.getFoodItem(id).getFoodName()+" added to Cart!") ,Toast.LENGTH_SHORT).show();
+                notifyDataSetChanged();
             }
         });
+        removeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id = foodItemArrayList.get(holder.getAdapterPosition()).getFoodID();
+                CartItemData.removeItem(FoodItemData.getFoodItem(id));
+                String popUp="";
+                Toast.makeText(v.getContext(),popUp.concat(FoodItemData.getFoodItem(id).getFoodName()+" removed from Cart!") ,Toast.LENGTH_SHORT).show();
+                notifyDataSetChanged();
+            }
+        });
+
 
     }
 

@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/checkout_order_placeholder" />
 
     <TextView
-        android:id="@+id/checkout_item_name"
+        android:id="@+id/history_item_name"
         android:layout_width="81dp"
         android:layout_height="27dp"
         android:layout_marginStart="36dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/order_history_placeholder" />
 
     <TextView
-        android:id="@+id/checkout_food_price_lkr"
+        android:id="@+id/history_item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -50,9 +50,9 @@
         android:text="204132"
         android:textColor="#F28E26"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/checkout_item_name"
-        app:layout_constraintStart_toEndOf="@+id/checkout_item_name"
-        app:layout_constraintTop_toTopOf="@+id/checkout_item_name" />
+        app:layout_constraintBottom_toBottomOf="@+id/history_item_name"
+        app:layout_constraintStart_toEndOf="@+id/history_item_name"
+        app:layout_constraintTop_toTopOf="@+id/history_item_name" />
 
     <TextView
         android:id="@+id/order_history_total"
@@ -75,8 +75,8 @@
         android:fontFamily="@font/roboto"
         android:text="19/09/2022"
         android:textColor="#F28E26"
-        app:layout_constraintStart_toStartOf="@+id/checkout_item_name"
-        app:layout_constraintTop_toBottomOf="@+id/checkout_item_name" />
+        app:layout_constraintStart_toStartOf="@+id/history_item_name"
+        app:layout_constraintTop_toBottomOf="@+id/history_item_name" />
 
     <TextView
         android:id="@+id/order_history_item_time"

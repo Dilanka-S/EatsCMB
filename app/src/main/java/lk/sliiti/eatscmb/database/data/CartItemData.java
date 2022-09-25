@@ -32,6 +32,20 @@ public class CartItemData {
         }
 
     }
+    public static void removeItem(FoodItem foodItem){
+        if(cartItemDataArrayList.contains(getCartItem(foodItem.getFoodID()))){
+            if(getCartItem(foodItem.getFoodID()).getQuantity()==1){
+                cartItemDataArrayList.remove(getCartItem(foodItem.getFoodID()));
+            }else{
+                int quantity = getCartItem(foodItem.getFoodID()).getQuantity() -1;
+                int price = getCartItem(foodItem.getFoodID()).getFoodPrice();
+                int total = getCartItem(foodItem.getFoodID()).getTotal() - price;
+                getCartItem(foodItem.getFoodID()).setQuantity(quantity);
+                getCartItem(foodItem.getFoodID()).setTotal(total);
+            }
+        }
+
+    }
     public int size(){
        return cartItemDataArrayList.size();
     }

@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import lk.sliiti.eatscmb.R;
+import lk.sliiti.eatscmb.database.data.FoodItemData;
 import lk.sliiti.eatscmb.database.model.OrderHistoryItem;
+import lk.sliiti.eatscmb.fragments.DetailedOrderHistoryFragment;
+import lk.sliiti.eatscmb.fragments.FoodSelectionFragment;
 import lk.sliiti.eatscmb.viewHolders.RestaurantVH;
 import lk.sliiti.eatscmb.viewHolders.UserProfileVH;
 
@@ -36,6 +39,16 @@ public class UserProfileAdapter extends RecyclerView.Adapter<UserProfileVH> {
     @Override
     public void onBindViewHolder(@NonNull UserProfileVH holder, int position) {
         holder.bind(orderHistoryItemArrayList.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DetailedOrderHistoryFragment orderHistoryFragment = new DetailedOrderHistoryFragment();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container_view,orderHistoryFragment)
+                        .addToBackStack("foodSelectionpass").commit();
+            }
+        });
+
     }
 
     @Override

@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import lk.sliiti.eatscmb.R;
+import lk.sliiti.eatscmb.database.data.UserData;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -74,6 +76,23 @@ public class RegisterFragment extends Fragment {
         password = view.findViewById(R.id.register_password);
         registerBtn = view.findViewById(R.id.register_btn);
         backToLoginBtn = view.findViewById(R.id.register_goToLoginBtn);
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nameString = name.getText().toString();
+                String usernameString = username.getText().toString();
+                String passwordString = password.getText().toString();
+
+                if(UserData.userAlreadyExists(usernameString)){
+                    Toast.makeText(getContext(),"This username is already taken!",Toast.LENGTH_SHORT).show();
+                }else{
+                    UserData.addUser(nameString,usernameString,passwordString,"no");
+                    String popUp="";
+                    Toast.makeText(getContext(),popUp.concat("Username "+usernameString+" has been successfully added!"),Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         backToLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

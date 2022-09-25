@@ -35,7 +35,21 @@ public class UserData {
             }
         }
         return user;
+    }
 
+    public static void addUser(String name, String username, String password, String logStatus){
+        userDataArrayList.add(new User(username,password,name,logStatus));
+    }
+
+    public static Boolean userAlreadyExists(String username){
+        Boolean confirmation = false;
+        for (int i = 0; i < userDataArrayList.size(); i++) {
+            if (username.equals(userDataArrayList.get(i).getUsername())) {
+                confirmation = true;
+            }
+
+        }
+        return confirmation;
     }
 
 

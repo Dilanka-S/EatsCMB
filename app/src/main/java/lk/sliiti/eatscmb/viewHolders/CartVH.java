@@ -15,7 +15,7 @@ public class CartVH extends RecyclerView.ViewHolder {
         super(itemView);
         itemName = itemView.findViewById(R.id.cartItemName);
         quantity = itemView.findViewById(R.id.cartItemQuantity);
-        itemTotal = itemView.findViewById(R.id.CartItemTotal);
+        itemTotal = itemView.findViewById(R.id.cartItemTotal);
     }
     public void bind(CartItem cartItem){
         itemName.setText(cartItem.getFoodName());

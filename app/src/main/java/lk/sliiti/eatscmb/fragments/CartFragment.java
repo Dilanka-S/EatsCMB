@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import lk.sliiti.eatscmb.R;
 import lk.sliiti.eatscmb.adapters.CartAdapter;
@@ -22,6 +23,8 @@ import lk.sliiti.eatscmb.database.data.FoodItemData;
  * create an instance of this fragment.
  */
 public class CartFragment extends Fragment {
+    private TextView grandTotal;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,10 +53,15 @@ public class CartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_cart, container, false);
+        grandTotal = view.findViewById(R.id.checkout_total);
 
-        RecyclerView cartRecyclerView = view.findViewById(R.id.checkout_foodSelection);
+        RecyclerView cartRecyclerView = view.findViewById(R.id.checkout_recyclerView);
         cartRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         cartRecyclerView.setAdapter(new CartAdapter(CartItemData.getCartItemDataArrayList(),getParentFragmentManager()));
+
+        int tempTotal = CartItemData.getTotal();
+        String total="";
+        grandTotal.setText(total.concat("LKR "+tempTotal));
         return view;
     }
 }

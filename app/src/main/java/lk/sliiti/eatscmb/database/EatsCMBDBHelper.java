@@ -20,8 +20,8 @@ public class EatsCMBDBHelper extends SQLiteOpenHelper {
         db.execSQL("create table "+ LoginDBSchema.userTable.NAME+"" + "("
                 +LoginDBSchema.userTable.Cols.USERNAME+" Text PRIMARY KEY, "
                 +LoginDBSchema.userTable.Cols.NAME+" Text NOT NULL, "
-                +LoginDBSchema.userTable.Cols.LOG_STATUS+" Boolean NOT NULL, "
-                + LoginDBSchema.userTable.Cols.PASSWORD+ " Text NOT NULL);");
+                +LoginDBSchema.userTable.Cols.LOG_STATUS+" Text NOT NULL, "
+                +LoginDBSchema.userTable.Cols.PASSWORD+ " Text NOT NULL);");
         db.execSQL("create table "+ RestaurantDBSchema.restaurantTable.NAME+"("
                 +RestaurantDBSchema.restaurantTable.Cols.NAME+" Text NOT NULL, "
                 +RestaurantDBSchema.restaurantTable.Cols.PHOTO+ " Integer NOT NULL, "
@@ -35,7 +35,9 @@ public class EatsCMBDBHelper extends SQLiteOpenHelper {
                 +FoodItemDBSchema.foodItemTable.Cols.PRICE+" Integer NOT NULL, "
                 +FoodItemDBSchema.foodItemTable.Cols.RESTAURANT_ID+" Integer NOT NULL, "
                 +FoodItemDBSchema.foodItemTable.Cols.RESTAURANT+" Text NOT NULL, "
-                +FoodItemDBSchema.foodItemTable.Cols.FOOD_PHOTO+ " Integer NOT NULL);");
+                +FoodItemDBSchema.foodItemTable.Cols.FOOD_PHOTO+ " Integer NOT NULL, "
+                +"FOREIGN KEY (" + FoodItemDBSchema.foodItemTable.Cols.RESTAURANT_ID+") REFERENCES "+
+                        RestaurantDBSchema.restaurantTable.NAME+"("+ RestaurantDBSchema.restaurantTable.Cols.RESTAURANTID+"));");
     }
 
     @Override

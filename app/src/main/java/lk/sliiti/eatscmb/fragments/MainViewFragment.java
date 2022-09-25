@@ -79,7 +79,11 @@ public class MainViewFragment extends Fragment {
         recyclerView.setAdapter(new RestaurantsAdapter(restaurantArrayList,getParentFragmentManager()));
         //RestaurantData.getRestaurants()
 
-        ArrayList<FoodItem> foodItemArrayList = eatsCMBDBModel.getAllFoodItems();
+//        ArrayList<FoodItem> foodItemArrayList = eatsCMBDBModel.getAllFoodItems();
+//        for (int i = 0; i < foodItemArrayList.size(); i++) {
+//
+//        }
+//        ArrayList<FoodItem> picksOfTheDayList = EatsCMBDBModel.getPicksOfTheDay(foodItemArrayList);
 
         RecyclerView pfyRecyclerView = view.findViewById(R.id.picksRecycler);
         pfyRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));

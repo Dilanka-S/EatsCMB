@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 import lk.sliiti.eatscmb.R;
 import lk.sliiti.eatscmb.database.model.FoodItem;
-import lk.sliiti.eatscmb.database.model.Restaurant;
-import lk.sliiti.eatscmb.database.model.User;
 
 public class FoodItemData {
     private static ArrayList<FoodItem> foodItemArrayList = new ArrayList<>();
@@ -18,13 +16,13 @@ public class FoodItemData {
         return foodItemArrayList;
     }
 
-    public static void getFoodItems(){
+    public static ArrayList<FoodItem> getFoodItems(){
         while(!alreadySet){
             initializeList();
             alreadySet=true;
         }
 
-        //return foodItemArrayList;
+        return foodItemArrayList;
     }
 
     private static void initializeList(){
@@ -46,7 +44,13 @@ public class FoodItemData {
         foodItemArrayList.add(new FoodItem(2005,"Chicken Strips",3,
                 "Popeyes",1400,"Crispy Fried Chicken with spicy seasoning on a glorious sandwich",
                 R.drawable.popeyes_chicken_strips));
-        foodItemArrayList.add(new FoodItem(2007,"French Fries",5,
+        foodItemArrayList.add(new FoodItem(2006,"Chicken Ham BLT",7,
+                "Subway",850,"Chicken Ham BLT",
+                R.drawable.subwaycaliturkeyfresh_lead));
+        foodItemArrayList.add(new FoodItem(2007,"Classic Whopper",4,
+                "Burgher King",900,"The Classic BK Beef Patty Whopper",
+                R.drawable.impossible_whopper));
+        foodItemArrayList.add(new FoodItem(2013,"French Fries",5,
                 "Pizza Hut",320,"Salted French Fries fried to perfection",
                 R.drawable.mcdonald_frenchfries));
         foodItemArrayList.add(new FoodItem(2008,"French Fries",6,
@@ -64,6 +68,12 @@ public class FoodItemData {
         foodItemArrayList.add(new FoodItem(2012,"French Fries",10,
                 "Dunkin Donuts",320,"Salted French Fries fried to perfection",
                 R.drawable.mcdonald_frenchfries));
+        foodItemArrayList.add(new FoodItem(2014,"Impossible Whopper",4,
+                "Burgher King",1200,"The classic, but Vegan",
+                R.drawable.burgerkingimpossiblewhopper));
+        foodItemArrayList.add(new FoodItem(2015,"French Fries",2,
+                "KFC",320,"Salted French Fries fried to perfection",
+                R.drawable.kfc_fries));
         addCocaCola();
 
     }

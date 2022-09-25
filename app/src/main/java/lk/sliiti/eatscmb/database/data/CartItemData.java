@@ -43,4 +43,12 @@ public class CartItemData {
         }
         return cartItem;
     }
+
+    public static int getTotal(){
+        int total=0;
+        for (int i = 0; i < cartItemDataArrayList.size(); i++) {
+            total = total+cartItemDataArrayList.get(i).getTotal();
+        }
+        return total;
+    }
 }

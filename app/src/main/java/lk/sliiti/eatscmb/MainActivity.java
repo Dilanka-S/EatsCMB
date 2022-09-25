@@ -15,9 +15,13 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import lk.sliiti.eatscmb.database.data.FoodItemData;
 import lk.sliiti.eatscmb.database.data.RestaurantData;
+import lk.sliiti.eatscmb.database.data.UserData;
 import lk.sliiti.eatscmb.database.dbModels.EatsCMBDBModel;
+import lk.sliiti.eatscmb.database.model.FoodItem;
 import lk.sliiti.eatscmb.database.model.Restaurant;
+import lk.sliiti.eatscmb.database.model.User;
 import lk.sliiti.eatscmb.fragments.MainViewFragment;
 import lk.sliiti.eatscmb.uvindu.adapter.PicksAdapter;
 import lk.sliiti.eatscmb.uvindu.adapter.RestaurantAdapter;
@@ -47,6 +51,17 @@ public class MainActivity extends AppCompatActivity {
             eatsCMBDBModel.addRestaurants(restaurantArrayList.get(i));
         }
 
+//        ArrayList<FoodItem> foodItemArrayList = FoodItemData.getFoodItems();
+//
+//        for (int i = 0; i < foodItemArrayList.size(); i++) {
+//            eatsCMBDBModel.addFoodItems(foodItemArrayList.get(i));
+//        }
+
+        ArrayList<User> userArrayList = UserData.getUserDataArrayList();
+
+        for (int i = 0; i < userArrayList.size(); i++) {
+            eatsCMBDBModel.addUsers(userArrayList.get(i));
+        }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 

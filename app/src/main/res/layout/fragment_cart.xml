@@ -6,12 +6,12 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/checkout_ResName"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="McDonald's"
+        android:text="CART"
         android:textColor="#F28E26"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,45 +19,48 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/checkout_ScrollBar"
+        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkout_ResName"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/line_1" />
 
-    <ImageView
-        android:id="@+id/checkout_PlaceHolder"
-        android:layout_width="370dp"
-        android:layout_height="486dp"
-        android:layout_marginTop="8dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/checkout_recyclerView"
+        android:layout_width="398dp"
+        android:layout_height="532dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkout_ScrollBar"
-        app:srcCompat="@drawable/rectangle_13" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/checkout_foodSelection"
-        android:layout_width="322dp"
-        android:layout_height="385dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/checkout_PlaceHolder"
-        app:layout_constraintEnd_toEndOf="@+id/checkout_PlaceHolder"
-        app:layout_constraintStart_toStartOf="@+id/checkout_PlaceHolder"
-        app:layout_constraintTop_toBottomOf="@+id/checkout_ScrollBar"
-        app:layout_constraintVertical_bias="0.507" />
+    <TextView
+        android:id="@+id/checkout_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="173dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="LKR 1400"
+        android:textColor="#F28E26"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkout_recyclerView" />
 
     <Button
-        android:id="@+id/checkout_Button"
-        android:layout_width="149dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/checkoutbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Checkout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkout_PlaceHolder" />
+        app:layout_constraintTop_toBottomOf="@+id/checkout_total" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

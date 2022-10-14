@@ -28,11 +28,6 @@ import lk.sliiti.eatscmb.uvindu.adapter.RestaurantAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

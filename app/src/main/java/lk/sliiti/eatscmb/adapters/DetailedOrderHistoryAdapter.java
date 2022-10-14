@@ -11,15 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import lk.sliiti.eatscmb.R;
+import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.database.model.OrderHistoryItem;
 import lk.sliiti.eatscmb.viewHolders.DetailedOrderHistoryVH;
 import lk.sliiti.eatscmb.viewHolders.UserProfileVH;
 
 public class DetailedOrderHistoryAdapter extends RecyclerView.Adapter<DetailedOrderHistoryVH> {
-    private ArrayList<OrderHistoryItem> orderHistoryItemArrayList;
+    private ArrayList<CartItem> orderHistoryItemArrayList;
     private FragmentManager fragmentManager;
 
-    public DetailedOrderHistoryAdapter(ArrayList<OrderHistoryItem> orderHistoryItemArrayList, FragmentManager fragmentManager) {
+    public DetailedOrderHistoryAdapter(ArrayList<CartItem> orderHistoryItemArrayList, FragmentManager fragmentManager) {
         this.orderHistoryItemArrayList = orderHistoryItemArrayList;
         this.fragmentManager = fragmentManager;
     }
@@ -28,7 +29,7 @@ public class DetailedOrderHistoryAdapter extends RecyclerView.Adapter<DetailedOr
     @Override
     public DetailedOrderHistoryVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.order_history_item,parent,false);
+        View view = layoutInflater.inflate(R.layout.order_history_cart_recycler,parent,false);
         DetailedOrderHistoryVH myDataVHolder = new DetailedOrderHistoryVH(view);
         return myDataVHolder;
     }

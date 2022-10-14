@@ -85,7 +85,8 @@ public class UserProfileFragment extends Fragment {
             Toast.makeText(getContext(),"Cannot find user!",Toast.LENGTH_SHORT).show();
         }
 
-        ArrayList<OrderHistoryItem> demoList = OrderHistoryData.demoInitialise();
+        OrderHistoryData.demoInitialise();
+        ArrayList<OrderHistoryItem> demoList = OrderHistoryData.getAllOrders();
         RecyclerView userProfileRecyclerView = view.findViewById(R.id.user_profile_recycler);
         userProfileRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         userProfileRecyclerView.setAdapter(new UserProfileAdapter(demoList,getParentFragmentManager()));

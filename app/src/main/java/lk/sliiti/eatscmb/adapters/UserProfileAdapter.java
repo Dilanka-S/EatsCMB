@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import lk.sliiti.eatscmb.R;
 import lk.sliiti.eatscmb.database.data.FoodItemData;
+import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.database.model.OrderHistoryItem;
 import lk.sliiti.eatscmb.fragments.DetailedOrderHistoryFragment;
 import lk.sliiti.eatscmb.fragments.FoodSelectionFragment;
@@ -42,7 +43,9 @@ public class UserProfileAdapter extends RecyclerView.Adapter<UserProfileVH> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DetailedOrderHistoryFragment orderHistoryFragment = new DetailedOrderHistoryFragment();
+                String totalPrice = String.valueOf(orderHistoryItemArrayList.get(holder.getAdapterPosition()).getTotal_price());
+                ArrayList<CartItem> cartItems = orderHistoryItemArrayList.get(holder.getAdapterPosition()).getCartItems();
+                DetailedOrderHistoryFragment orderHistoryFragment = new DetailedOrderHistoryFragment(cartItems,totalPrice);
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragment_container_view,orderHistoryFragment)
                         .addToBackStack("foodSelectionpass").commit();

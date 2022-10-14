@@ -10,6 +10,7 @@
         android:layout_width="393dp"
         android:layout_height="116dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/checkout_order_placeholder" />
@@ -36,51 +37,27 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toEndOf="@+id/checkout_remove_btn"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.489" />
-
-    <ImageButton
-        android:id="@+id/checkout_add_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/historyItemName"
-        app:layout_constraintTop_toBottomOf="@+id/historyItemName"
-        app:srcCompat="@drawable/group_1"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/checkout_food_count_placeholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/checkout_add_btn"
-        app:layout_constraintStart_toEndOf="@+id/checkout_add_btn"
-        app:layout_constraintTop_toTopOf="@+id/checkout_add_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyItemName"
         app:srcCompat="@drawable/rectangle_5" />
 
-    <ImageButton
-        android:id="@+id/checkout_remove_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/checkout_food_count_placeholder"
-        app:layout_constraintStart_toEndOf="@+id/checkout_food_count_placeholder"
-        app:layout_constraintTop_toTopOf="@+id/checkout_food_count_placeholder"
-        app:layout_constraintVertical_bias="0.277"
-        app:srcCompat="@drawable/group_2"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
     <TextView
-        android:id="@+id/cartItemQuantity"
+        android:id="@+id/histroyItemQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
         app:layout_constraintBottom_toBottomOf="@+id/checkout_food_count_placeholder"
         app:layout_constraintEnd_toEndOf="@+id/checkout_food_count_placeholder"
-        app:layout_constraintStart_toEndOf="@+id/checkout_add_btn"
+        app:layout_constraintStart_toStartOf="@+id/checkout_food_count_placeholder"
         app:layout_constraintTop_toTopOf="@+id/checkout_food_count_placeholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

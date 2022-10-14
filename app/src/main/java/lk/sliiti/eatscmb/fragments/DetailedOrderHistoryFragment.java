@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ import lk.sliiti.eatscmb.R;
 import lk.sliiti.eatscmb.adapters.DetailedOrderHistoryAdapter;
 import lk.sliiti.eatscmb.adapters.UserProfileAdapter;
 import lk.sliiti.eatscmb.database.data.OrderHistoryData;
+import lk.sliiti.eatscmb.database.model.CartItem;
 import lk.sliiti.eatscmb.database.model.OrderHistoryItem;
 
 /**
@@ -24,6 +26,11 @@ import lk.sliiti.eatscmb.database.model.OrderHistoryItem;
  * create an instance of this fragment.
  */
 public class DetailedOrderHistoryFragment extends Fragment {
+
+    private static ArrayList<CartItem> cartItems;
+    private static String totalPrice;
+    private static TextView total;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +41,10 @@ public class DetailedOrderHistoryFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public DetailedOrderHistoryFragment() {
+    public DetailedOrderHistoryFragment(ArrayList<CartItem> cartItemsList, String totalPriceInput) {
         // Required empty public constructor
+        cartItems = cartItemsList;
+        totalPrice = totalPriceInput;
     }
 
     /**
@@ -48,7 +57,7 @@ public class DetailedOrderHistoryFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static DetailedOrderHistoryFragment newInstance(String param1, String param2) {
-        DetailedOrderHistoryFragment fragment = new DetailedOrderHistoryFragment();
+        DetailedOrderHistoryFragment fragment = new DetailedOrderHistoryFragment(cartItems, totalPrice);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -70,6 +79,13 @@ public class DetailedOrderHistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_detailed_order_history, container, false);
+
+        total = view.findViewById(R.id.order_history_detailed_total);
+        total.setText(totalPrice);
+
+        RecyclerView detailedHistoryRecyclerView = view.findViewById(R.id.order_history_cart_recyclerView);
+        detailedHistoryRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
+        detailedHistoryRecyclerView.setAdapter(new DetailedOrderHistoryAdapter(cartItems,getParentFragmentManager()));
         return view;
     }
 }
